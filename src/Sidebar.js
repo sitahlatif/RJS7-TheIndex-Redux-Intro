@@ -1,7 +1,20 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 class Sidebar extends Component {
   render() {
+    const newAuthor = {
+      first_name: "Author",
+      last_name: `${this.props.newAuthId}`,
+      imageUrl:
+        "https://www.netz.de/images/2016-11-21-firefox-focus-header-58cfedd908c25_500_300.jpg",
+      books: [
+        {
+          title: "Anonymous book",
+          color: "mysterious color"
+        }
+      ]
+    };
     return (
       <div id="sidebar">
         <img src="theindex.svg" className="logo" alt="the index logo" />
@@ -10,12 +23,22 @@ class Sidebar extends Component {
             <button>AUTHORS</button>
           </h4>
           <h4 className="menu-item">
-            <button onClick={this.props.addAuthorHandler}>+ ADD AUTHOR</button>
+            <button onClick={() => this.props.addAuthor(newAuthor)}>
+              + ADD AUTHOR
+            </button>
           </h4>
         </section>
       </div>
     );
   }
 }
+const mapDispatchToProps = dispatch => {
+  return {
+    addAuthor: author => dispatch({ type: "ADD_AUTHOR", payload: author })
+  };
+};
 
-export default Sidebar;
+export default connect(
+  null,
+  mapDispatchToProps
+)(Sidebar);
