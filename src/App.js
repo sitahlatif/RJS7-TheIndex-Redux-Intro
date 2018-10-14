@@ -34,8 +34,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    authors: state.authors,
-    newduthorId: state.newAuthorId
+    authors: state.authors
   };
 };
 
