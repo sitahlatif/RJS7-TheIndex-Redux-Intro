@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 
-// Data
-import authors from "./data";
-
 // Components
 import Sidebar from "./Sidebar";
 import AuthorsList from "./AuthorsList";
@@ -10,12 +7,6 @@ import AuthorsList from "./AuthorsList";
 import { connect } from "react-redux";
 
 class App extends Component {
-  // ** since we have a central state, we do not need this any more **
-  // state = {
-  //   authors: authors,
-  //   newAuthorId: 1
-  // };
-
   render() {
     return (
       <div id="app" className="container-fluid">
