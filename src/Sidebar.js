@@ -32,7 +32,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addAuthor: author => dispatch(actionCreators.add_author(author))
+    addAuthor: authorId => dispatch(actionCreators.add_author(authorId))
   };
 };
 
