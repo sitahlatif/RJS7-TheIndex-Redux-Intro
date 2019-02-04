@@ -2,7 +2,7 @@ import authors from "./data";
 
 const initialState = {
   authors: authors,
-  newAuthorId: 1
+  newAuthorId: 5
 };
 
 const reducer = (state = initialState, action) => {
