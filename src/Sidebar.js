@@ -14,7 +14,7 @@ class Sidebar extends Component {
           </h4>
           <h4 className="menu-item">
             <button
-              onClick={() => this.props.onAddAuthor(this.props.newAuthorId)}
+              onClick={() => this.props.addAuthor(this.props.newAuthorId)}
             >
               + ADD AUTHOR
             </button>
@@ -32,7 +32,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addAuthor: authorId => dispatch(actionCreators.add_author(authorId))
+    addAuthor: authorId => dispatch(actionCreators.addAuthor(authorId))
   };
 };
 

@@ -1,7 +1,7 @@
 const ADD_AUTHOR = "ADD_AUTHOR";
 const DELETE_AUTHOR = "DELETE_AUTHOR";
 
-export const add_author = newAuthorId => {
+export const addAuthor = newAuthorId => {
   let newAuthor = {
     id: newAuthorId,
     first_name: "Author",
@@ -21,7 +21,7 @@ export const add_author = newAuthorId => {
   };
 };
 
-export const delete_author = author => {
+export const deleteAuthor = author => {
   return {
     type: DELETE_AUTHOR,
     payload: author

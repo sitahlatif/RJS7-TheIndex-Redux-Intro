@@ -26,7 +26,7 @@ class AuthorCard extends Component {
           <button
             className="btn btn-danger"
             onClick={() => {
-              this.props.onDeleteAuthor(this.props.author);
+              this.props.deleteAuthor(this.props.author);
             }}
           >
             DELETE
@@ -39,7 +39,7 @@ class AuthorCard extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onDeleteAuthor: author => dispatch(actionCreators.delete_author(author))
+    deleteAuthor: author => dispatch(actionCreators.deleteAuthor(author))
   };
 };
 
