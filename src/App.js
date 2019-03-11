@@ -6,6 +6,7 @@ import authors from "./data";
 // Components
 import Sidebar from "./Sidebar";
 import AuthorsList from "./AuthorsList";
+import { connect } from "react-redux";
 
 class App extends Component {
   state = {
@@ -41,12 +42,16 @@ class App extends Component {
             <Sidebar addAuthorHandler={this.addAuthor} />
           </div>
           <div className="content col-10">
-            <AuthorsList authors={this.state.authors} />
+            <AuthorsList authors={this.props.authors} />
           </div>
         </div>
       </div>
     );
   }
 }
-
-export default App;
+const mapStateToProps = state => {
+  return {
+    authors: state.authors
+  };
+};
+export default connect(mapStateToProps)(App);
